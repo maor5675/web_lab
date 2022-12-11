@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row row-cols-1 row-cols-md-5 g-4">
+        {% for brand in brandlist %}    
+        <div class="col">
+          <div class="card">
+            <img style="width:280px;height:150px" src="{% static 'images/web_uplouds/'%}{{ brand.logo }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ brand.brand }}</h5>
+              <p class="card-text"></p>
+              <a href="{{ brand.id }}/" class="btn btn-danger">המשך</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock%}

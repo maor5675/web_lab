@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{%for hitch in hitches %}
+<div class="alert alert-light" role="alert">
+    {{hitch.Malfunction }} 
+<button class="btn btn-danger" >price :</button>
+<a class="btn btn-dark" role="button" href="/lab/{{ type }}/{{ hitch.id }}/{{user.id}}">500 </a>    
+</div>
+{% endfor %}
+{% endblock%}

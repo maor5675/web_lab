@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+{% block content %}
+{% if name == 'register' %} 
+<form style="color:rgb(244, 240, 240)" action="{% url 'lab:register' %}" method="POST"
+enctype=multipart/form-data>
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <hr></hr>
+    <input type="submit" value="Register">
+</form>
+{% else %} 
+<form style="color:rgb(244, 240, 240)" action="{% url 'lab:login'%}" method="POST">
+    {% csrf_token %}
+    <label>Username</label>
+    <input type="text" name="username">
+    <label>Password</label>
+    <input type="password" name="password">
+    <input type="submit" value="Login">
+</form>
+{% endif %}
+{% endblock %}
